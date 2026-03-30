@@ -7,8 +7,7 @@ class AgentFactory:
     def __init__(self, tools):
         self.tools = tools
 
-        base_llm = LLM()
-        self.llm = CrewAILLMAdapter(base_llm)
+        self.llm = CrewAILLMAdapter()
 
     def triage(self):
         return Agent(
