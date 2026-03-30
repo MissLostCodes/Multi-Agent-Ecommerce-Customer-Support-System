@@ -1,0 +1,9 @@
+crewai
+langchain
+langgraph
+python-dotenv
+pydantic
+pytest
+google-genai
+chromadb
+langchain-text-splitters

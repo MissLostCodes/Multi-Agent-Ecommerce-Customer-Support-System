@@ -1,0 +1,102 @@
+[
+  {
+    "ticket": "Cookies arrived melted, want refund",
+    "context": {"category": "perishable", "delivery_delay": true, "order_status": "delivered"},
+    "expected": "partial"
+  },
+  {
+    "ticket": "Shirt is final sale, I want refund",
+    "context": {"category": "apparel", "final_sale": true, "order_status": "delivered"},
+    "expected": "deny"
+  },
+  {
+    "ticket": "Received wrong item",
+    "context": {"category": "electronics", "order_status": "delivered"},
+    "expected": "approve"
+  },
+  {
+    "ticket": "My order is wrong",
+    "context": {},
+    "expected": "clarify"
+  },
+  {
+    "ticket": "Package marked delivered but not received",
+    "context": {"order_status": "delivered"},
+    "expected": "needs escalation"
+  },
+  {
+    "ticket": "Cancel order after shipping",
+    "context": {"order_status": "shipped"},
+    "expected": "deny"
+  },
+  {
+    "ticket": "Opened shampoo, want return",
+    "context": {"category": "hygiene", "opened": true},
+    "expected": "deny"
+  },
+  {
+    "ticket": "Late delivery, no damage",
+    "context": {"delivery_delay": true},
+    "expected": "partial"
+  },
+  {
+    "ticket": "Missing items in order",
+    "context": {"order_status": "delivered"},
+    "expected": "approve"
+  },
+  {
+    "ticket": "EU customer wants return after 10 days opened item",
+    "context": {"region": "EU", "opened": true},
+    "expected": "approve"
+  },
+  {
+    "ticket": "EU user returning opened hygiene item",
+    "context": {"region": "EU", "category": "hygiene", "opened": true},
+    "expected": "needs escalation"
+  },
+  {
+    "ticket": "Seller denies refund but platform allows",
+    "context": {"marketplace": true},
+    "expected": "needs escalation"
+  },
+  {
+    "ticket": "Give me refund because I am loyal customer",
+    "context": {},
+    "expected": "needs escalation"
+  },
+  {
+    "ticket": "Coupon reused request",
+    "context": {},
+    "expected": "deny"
+  },
+  {
+    "ticket": "Damaged electronics",
+    "context": {"order_status": "delivered"},
+    "expected": "approve"
+  },
+  {
+    "ticket": "Perishable item fine but customer unhappy",
+    "context": {"category": "perishable"},
+    "expected": "deny"
+  },
+  {
+    "ticket": "Refund requested after 30 days",
+    "context": {"order_status": "delivered"},
+    "expected": "deny"
+  },
+  {
+    "ticket": "Incorrect address provided",
+    "context": {"order_status": "shipped"},
+    "expected": "deny"
+  },
+  {
+    "ticket": "Lost package confirmed",
+    "context": {"order_status": "lost"},
+    "expected": "approve"
+  },
+  {
+    "ticket": "Opened electronics defective",
+    "context": {"opened": true},
+    "expected": "approve"
+  }
+]

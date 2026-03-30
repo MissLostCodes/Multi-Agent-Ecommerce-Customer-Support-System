@@ -1,0 +1,10 @@
+# Marketplace Policy
+
+## Seller Responsibility
+Marketplace sellers handle returns/refunds.
+
+## Platform Responsibility
+Platform only mediates disputes.
+
+## Conflict Rule
+Seller policy overrides platform unless illegal.
