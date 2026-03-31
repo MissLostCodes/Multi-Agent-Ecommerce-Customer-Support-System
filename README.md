@@ -37,16 +37,7 @@ No GPUs needed—everything runs on Google's Gemini  embeddings , groq/llama-3.1
 ---
 
 ## Architecture
-```
- flowchart LR
-    A[Ticket] --> B[Triage Agent]
-    B -->|classify| C{RAG Router}
-    C -->|collection| D[ChromaDB]
-    D --> E[Retriever Agent]
-    E --> F[Writer Agent]
-    F --> G[Compliance Agent]
-    G --> H[Final Answer\nor ESCALATE]
-```
+![img_3.png](img_3.png)
 
 1. **Triage Agent** (`crewai`) – classify ticket, detect missing info  
 2. **Retriever Agent** – `Policy Search Tool` → exact Chroma collection (`refund`, `dispute`, `shipping`, …) via Gemini embedding-001  
