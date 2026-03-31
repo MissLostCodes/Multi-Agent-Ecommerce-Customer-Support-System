@@ -1,13 +1,20 @@
 from app.core.llm import LLM
 from app.core.crewai_llm_adapter import CrewAILLMAdapter
 from crewai import Agent
+from langchain_groq import ChatGroq
+import os
+from app.agents.tools import search_policy
 
+from dotenv import load_dotenv
+load_dotenv()
 
 class AgentFactory:
-    def __init__(self, tools):
-        self.tools = tools
+    def __init__(self):
 
-        self.llm = CrewAILLMAdapter()
+        # llm = ChatGroq(temperature=0,
+        #                model_name="llama3-70b-8192",
+        #                api_key=os.getenv("GROQ_API_KEY"))
+        self.llm = "groq/llama-3.1-8b-instant"
 
     def triage(self):
         return Agent(
@@ -47,7 +54,8 @@ Rules:
 - ONLY call the tool
 - Return tool output directly
 """,
-            tools=[self.tools.search_policy],
+
+            tools=[search_policy],
             llm=self.llm,
             verbose=True
         )

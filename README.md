@@ -11,7 +11,8 @@ An AI-powered customer-service crew that ingests policy documents, classifies su
 * [Why This Repo?](#why-this-repo)
 * [Architecture](#architecture)
 * [Project Structure](#project-structure)
-* [Installation](#installation)
+* [Project Structure](#project-structure)
+* [Outputs](#outputs)
 * [ [CLI Usage](#cli-usage)
 * [Python API Usage](#python-api-usage)
 * [Evaluation Suite](#evaluation-suite)
@@ -98,7 +99,12 @@ All results conform to `app.schemas.io.Output`.
 ```
 
 ---
+## Outputs
+![img.png](img.png)
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
 
+---
 ## Installation
 
 ### Prerequisites

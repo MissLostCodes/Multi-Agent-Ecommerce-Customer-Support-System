@@ -1,16 +1,17 @@
 from app.core.llm import LLM
 from app.rag.pipeline import RAGPipeline
-from app.agents.tools import Tools
+
 from app.agents.crew_agents import AgentFactory
 from app.graph.workflow import Workflow
-
+from dotenv import load_dotenv
+load_dotenv()
 
 llm = LLM()
 
 rag = RAGPipeline()
-tools = Tools(rag)
 
-factory = AgentFactory(tools)
+
+factory = AgentFactory()
 
 agents = {
     "triage": factory.triage(),

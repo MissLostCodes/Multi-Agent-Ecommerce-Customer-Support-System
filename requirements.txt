@@ -7,3 +7,5 @@ pytest
 google-genai
 chromadb
 langchain-text-splitters
+crewai[litellm]
+langchain_groq
