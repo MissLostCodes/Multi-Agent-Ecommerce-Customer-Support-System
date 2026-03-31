@@ -7,13 +7,13 @@ An AI-powered customer-service crew that ingests policy documents, classifies su
 ---
 
 ## Table of Contents
-* [Quick Start](#quick-start)
+
 * [Why This Repo?](#why-this-repo)
 * [Architecture](#architecture)
 * [Project Structure](#project-structure)
 * [Project Structure](#project-structure)
 * [Outputs](#outputs)
-* [ [CLI Usage](#cli-usage)
+* [Usage](#cli-usage)
 * [Python API Usage](#python-api-usage)
 * [Evaluation Suite](#evaluation-suite)
 * [Extending Agents or Policies](#extending-agents-or-policies)
@@ -21,28 +21,6 @@ An AI-powered customer-service crew that ingests policy documents, classifies su
 * [Troubleshooting](#troubleshooting)
 * [License](#license)
 
----
-
-## Quick Start
-```bash
-# 1. Clone & install
-git clone https://github.com/your-org/ecommerce-support-agent.git
-cd ecommerce-support-agent
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .
-
-# 2. Add Gemini API key
-echo "GOOGLE_API_KEY=your_key_here" > .env
-
-# 3. Ingest policies into vector DB
-python ingestion_trigger.py             # ← Done in ~10 s
-
-# 4. Ask a question / ticket
-python -c "from app.main import workflow; print(workflow.run('Cookies arrived melted, want refund'))"
-```
-
-You receive a structured answer (decision, rationale, customer-ready reply, citations, compliance flag).
 
 ---
 
@@ -109,7 +87,8 @@ All results conform to `app.schemas.io.Output`.
 
 ### Prerequisites
 Python 3.13+  
-Google Gemini API key (get one free via [Google AI Studio](https://makersuite.google.com/app/apikey))
+Groq API key 
+ 
 
 ### uv (recommended)
 ```bash
@@ -121,8 +100,10 @@ All dependencies listed in `pyproject.toml`.
 
 ---
 
-## CLI Usage
+## Usage
 ```bash
+SET env variables 
+
 # (1) Make sure Chroma is populated first
 uv run ingestion_trigger.py
 
