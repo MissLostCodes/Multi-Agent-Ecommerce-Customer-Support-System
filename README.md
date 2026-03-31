@@ -32,7 +32,7 @@ This repo automates **first-line responses**:
 * Writes fully-cited replies or escalates intelligently
 * 20 real-world test-cases baked in (≈ 85 % accuracy)
 
-No GPUs needed—everything runs on Google's Gemini family (flash + embedding).
+No GPUs needed—everything runs on Google's Gemini  embeddings , groq/llama-3.1-8b-instant  .
 
 ---
 
@@ -88,7 +88,7 @@ All results conform to `app.schemas.io.Output`.
 ### Prerequisites
 Python 3.13+  
 Groq API key 
- 
+Gemini API key 
 
 ### uv (recommended)
 ```bash
